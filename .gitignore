@@ -4,17 +4,22 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Virtual Environment
+# Virtual environments
 .venv/
 venv/
+env/
 
-# VS Code
+# Conda environment (only if you ever create one locally)
+.conda/
+
+# IDE
 .vscode/
+.idea/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Python packaging
+# Build
 build/
 dist/
 *.egg-info/
@@ -22,16 +27,17 @@ dist/
 # Logs
 *.log
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 
-# PyBullet recordings
-*.mp4
-*.gif
+# Testing
+.pytest_cache/
+.coverage
 
-# TensorBoard
+# Experiment outputs
 runs/
-
-# Environment variables
-.env
+tensorboard/
+checkpoints/
+models/
+outputs/
