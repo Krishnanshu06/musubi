@@ -15,9 +15,9 @@ bot = p.loadURDF("kuka_iiwa/model.urdf", startPos, startOrientation)
 n = p.getNumJoints(bot)
 endEffectorIndex = 6
 
-slider1 = p.addUserDebugParameter("X", -3.14, 3.14, 0)
-slider2 = p.addUserDebugParameter("Y", -3.14, 3.14, 0)
-slider3 = p.addUserDebugParameter("Z", -3.14, 3.14, 0)
+slider1 = p.addUserDebugParameter("X", -1, 1, 0)
+slider2 = p.addUserDebugParameter("Y", -1, 1, 0)
+slider3 = p.addUserDebugParameter("Z", -1, 1, 0)
 
 while p.isConnected():
     targetX = p.readUserDebugParameter(slider1)
