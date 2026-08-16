@@ -30,7 +30,7 @@ while p.isConnected():
     for i in range(p.getNumJoints(robot)):
 
         target = p.readUserDebugParameter(sliders[i])
-
+    
         p.setJointMotorControl2(
             bodyUniqueId=robot,
             jointIndex=i,
