@@ -35,14 +35,17 @@ shape = p.createMultiBody(
     baseCollisionShapeIndex=colShapeCube,
     baseVisualShapeIndex=visShapeCube,
     basePosition=[0, 0, 2],
+
     linkMasses=[1],
     linkCollisionShapeIndices=[colShapeSphere],
     linkVisualShapeIndices=[visShapeSphere],
     linkPositions=[[0, 0, 1]],
     linkOrientations=[[0, 0, 0, 1]],
     linkParentIndices=[0],
+    
     linkInertialFramePositions=[[0, 0, 0]],
     linkInertialFrameOrientations=[[0, 0, 0, 1]],
+
     linkJointTypes=[p.JOINT_REVOLUTE],
     linkJointAxis=[[0, 1, 1]]
 )
