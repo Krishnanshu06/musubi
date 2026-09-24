@@ -8,7 +8,7 @@ planeId = p.loadURDF("plane.urdf")
 startPos = [0,0,1]
 startPos2 = [2,0,1]
 startOrientation = p.getQuaternionFromEuler([0,0,0])
-boxId2 = p.loadURDF("quadruped/quadruped.urdf",startPos2, startOrientation)
+boxId2 = p.loadURDF(r"C:\Users\krish\Desktop\hexapud.urdf",startPos2, startOrientation)
 n = p.getNumJoints(boxId2)
 for i in range(n):
     info = p.getJointInfo(boxId2, i)
