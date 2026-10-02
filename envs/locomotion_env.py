@@ -8,8 +8,8 @@ from gymnasium import spaces
 import numpy as np
 import pybullet as p
 
-from musubi.envs.base_env import MusubiBaseEnv
-from musubi.morphology.builder import Creature, MorphologyBuilder
+from envs.base_env import MusubiBaseEnv
+from morphology.builder import Creature, MorphologyBuilder
 
 
 class LocomotionEnv(MusubiBaseEnv):

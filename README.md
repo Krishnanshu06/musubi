@@ -30,19 +30,17 @@ Musubi is designed to simulate procedural 3D creatures, co-evolve body morpholog
 
 ```text
 Musubi/
-├── musubi/
+├── envs/               # Custom Gymnasium simulation environments
+│   ├── __init__.py     # Gymnasium environment registration
+│   ├── base_env.py     # Base PyBullet-Gymnasium wrapper
+│   └── locomotion_env.py # Continuous locomotion task
+├── morphology/         # Procedural multi-body creature generation
 │   ├── __init__.py
-│   ├── envs/               # Custom Gymnasium simulation environments
-│   │   ├── __init__.py     # Gymnasium environment registration
-│   │   ├── base_env.py     # Base PyBullet-Gymnasium wrapper
-│   │   └── locomotion_env.py # Continuous locomotion task
-│   ├── morphology/         # Procedural multi-body creature generation
-│   │   ├── __init__.py
-│   │   └── builder.py      # Creature wrapper & MorphologyBuilder
-│   └── agents/             # RL training pipelines (PPO/SAC)
-├── test_env.py             # Gymnasium API compliance & throughput benchmark
-├── visualize_creature.py   # Interactive GUI visualizer with tracking camera
-├── environment.yml         # Conda environment specifications
+│   └── builder.py      # Creature wrapper & MorphologyBuilder
+├── agents/             # RL training pipelines (PPO/SAC)
+├── test_env.py         # Gymnasium API compliance & throughput benchmark
+├── visualize_creature.py # Interactive GUI visualizer with tracking camera
+├── environment.yml     # Conda environment specifications
 └── README.md
 ```
 
@@ -51,20 +49,26 @@ Musubi/
 ## ⚡ Quickstart
 
 ### 1. Environment Setup
+
 Activate the conda environment:
+
 ```powershell
 conda env create -f environment.yml
 conda activate musubi
 ```
 
 ### 2. Verify Environment Compliance & Benchmark
+
 Run the verification test:
+
 ```powershell
 python test_env.py
 ```
 
 ### 3. Launch Interactive Visual Demo
+
 View the creature in the PyBullet 3D visualizer:
+
 ```powershell
 python visualize_creature.py
 ```

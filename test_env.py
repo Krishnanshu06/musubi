@@ -9,7 +9,7 @@ Tests:
 import time
 import numpy as np
 from gymnasium.utils.env_checker import check_env
-from musubi.envs.locomotion_env import LocomotionEnv
+from envs.locomotion_env import LocomotionEnv
 
 
 def test_gymnasium_compliance():

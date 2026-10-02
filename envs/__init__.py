@@ -4,13 +4,13 @@ Registers Musubi environments with Gymnasium.
 """
 
 import gymnasium as gym
-from musubi.envs.base_env import MusubiBaseEnv
-from musubi.envs.locomotion_env import LocomotionEnv
+from envs.base_env import MusubiBaseEnv
+from envs.locomotion_env import LocomotionEnv
 
 # Register the locomotion environment for easy gym.make() instantiation
 gym.register(
     id="Musubi/Locomotion-v0",
-    entry_point="musubi.envs.locomotion_env:LocomotionEnv",
+    entry_point="envs.locomotion_env:LocomotionEnv",
     max_episode_steps=1000,
 )
 

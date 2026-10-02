@@ -5,8 +5,8 @@ Runs the simulation in PyBullet GUI mode with an open-loop sinusoidal gait and d
 
 import time
 import numpy as np
-import musubi  # noqa: F401
-from musubi.envs.locomotion_env import LocomotionEnv
+import envs  # noqa: F401
+from envs.locomotion_env import LocomotionEnv
 
 
 def run_visual_demo(episodes: int = 3, max_steps: int = 400):
