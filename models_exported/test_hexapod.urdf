@@ -1,0 +1,385 @@
+<?xml version="1.0" ?>
+<robot name="Hexapod_Spider">
+  <link name="torso">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="3.000"/>
+      <inertia ixx="0.061300" ixy="0" ixz="0" iyy="0.061300" iyz="0" izz="0.117600"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.280" length="0.100"/>
+      </geometry>
+      <material name="torso_mat">
+        <color rgba="0.60 0.20 0.85 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.280" length="0.100"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_0_seg_0">
+    <inertial>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <mass value="0.300"/>
+      <inertia ixx="0.001077" ixy="0" ixz="0" iyy="0.001077" iyz="0" izz="0.000154"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+      <material name="leg_0_seg_0_mat">
+        <color rgba="0.85 0.35 0.25 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_0_0" type="revolute">
+    <parent link="torso"/>
+    <child link="leg_0_seg_0"/>
+    <origin xyz="0.2425 0.1400 0.0000" rpy="0.0000 0.0000 0.5236"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-0.5236" upper="0.5236" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_0_seg_1">
+    <inertial>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <mass value="0.200"/>
+      <inertia ixx="0.000840" ixy="0" ixz="0" iyy="0.000840" iyz="0" izz="0.000068"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+      <material name="leg_0_seg_1_mat">
+        <color rgba="0.95 0.80 0.20 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_0_1" type="revolute">
+    <parent link="leg_0_seg_0"/>
+    <child link="leg_0_seg_1"/>
+    <origin xyz="0 0 -0.2000" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0000" upper="1.2566" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_1_seg_0">
+    <inertial>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <mass value="0.300"/>
+      <inertia ixx="0.001077" ixy="0" ixz="0" iyy="0.001077" iyz="0" izz="0.000154"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+      <material name="leg_1_seg_0_mat">
+        <color rgba="0.85 0.35 0.25 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1_0" type="revolute">
+    <parent link="torso"/>
+    <child link="leg_1_seg_0"/>
+    <origin xyz="0.0000 0.2800 0.0000" rpy="0.0000 0.0000 1.5708"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-0.5236" upper="0.5236" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_1_seg_1">
+    <inertial>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <mass value="0.200"/>
+      <inertia ixx="0.000840" ixy="0" ixz="0" iyy="0.000840" iyz="0" izz="0.000068"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+      <material name="leg_1_seg_1_mat">
+        <color rgba="0.95 0.80 0.20 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1_1" type="revolute">
+    <parent link="leg_1_seg_0"/>
+    <child link="leg_1_seg_1"/>
+    <origin xyz="0 0 -0.2000" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0000" upper="1.2566" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_2_seg_0">
+    <inertial>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <mass value="0.300"/>
+      <inertia ixx="0.001077" ixy="0" ixz="0" iyy="0.001077" iyz="0" izz="0.000154"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+      <material name="leg_2_seg_0_mat">
+        <color rgba="0.85 0.35 0.25 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_2_0" type="revolute">
+    <parent link="torso"/>
+    <child link="leg_2_seg_0"/>
+    <origin xyz="-0.2425 0.1400 0.0000" rpy="0.0000 0.0000 2.6180"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-0.5236" upper="0.5236" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_2_seg_1">
+    <inertial>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <mass value="0.200"/>
+      <inertia ixx="0.000840" ixy="0" ixz="0" iyy="0.000840" iyz="0" izz="0.000068"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+      <material name="leg_2_seg_1_mat">
+        <color rgba="0.95 0.80 0.20 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_2_1" type="revolute">
+    <parent link="leg_2_seg_0"/>
+    <child link="leg_2_seg_1"/>
+    <origin xyz="0 0 -0.2000" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0000" upper="1.2566" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_3_seg_0">
+    <inertial>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <mass value="0.300"/>
+      <inertia ixx="0.001077" ixy="0" ixz="0" iyy="0.001077" iyz="0" izz="0.000154"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+      <material name="leg_3_seg_0_mat">
+        <color rgba="0.85 0.35 0.25 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3_0" type="revolute">
+    <parent link="torso"/>
+    <child link="leg_3_seg_0"/>
+    <origin xyz="-0.2425 -0.1400 0.0000" rpy="0.0000 0.0000 3.6652"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-0.5236" upper="0.5236" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_3_seg_1">
+    <inertial>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <mass value="0.200"/>
+      <inertia ixx="0.000840" ixy="0" ixz="0" iyy="0.000840" iyz="0" izz="0.000068"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+      <material name="leg_3_seg_1_mat">
+        <color rgba="0.95 0.80 0.20 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3_1" type="revolute">
+    <parent link="leg_3_seg_0"/>
+    <child link="leg_3_seg_1"/>
+    <origin xyz="0 0 -0.2000" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0000" upper="1.2566" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_4_seg_0">
+    <inertial>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <mass value="0.300"/>
+      <inertia ixx="0.001077" ixy="0" ixz="0" iyy="0.001077" iyz="0" izz="0.000154"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+      <material name="leg_4_seg_0_mat">
+        <color rgba="0.85 0.35 0.25 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_4_0" type="revolute">
+    <parent link="torso"/>
+    <child link="leg_4_seg_0"/>
+    <origin xyz="-0.0000 -0.2800 0.0000" rpy="0.0000 0.0000 4.7124"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-0.5236" upper="0.5236" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_4_seg_1">
+    <inertial>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <mass value="0.200"/>
+      <inertia ixx="0.000840" ixy="0" ixz="0" iyy="0.000840" iyz="0" izz="0.000068"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+      <material name="leg_4_seg_1_mat">
+        <color rgba="0.95 0.80 0.20 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_4_1" type="revolute">
+    <parent link="leg_4_seg_0"/>
+    <child link="leg_4_seg_1"/>
+    <origin xyz="0 0 -0.2000" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0000" upper="1.2566" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_5_seg_0">
+    <inertial>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <mass value="0.300"/>
+      <inertia ixx="0.001077" ixy="0" ixz="0" iyy="0.001077" iyz="0" izz="0.000154"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+      <material name="leg_5_seg_0_mat">
+        <color rgba="0.85 0.35 0.25 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1000" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.032" length="0.200"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_5_0" type="revolute">
+    <parent link="torso"/>
+    <child link="leg_5_seg_0"/>
+    <origin xyz="0.2425 -0.1400 0.0000" rpy="0.0000 0.0000 5.7596"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-0.5236" upper="0.5236" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+  <link name="leg_5_seg_1">
+    <inertial>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <mass value="0.200"/>
+      <inertia ixx="0.000840" ixy="0" ixz="0" iyy="0.000840" iyz="0" izz="0.000068"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+      <material name="leg_5_seg_1_mat">
+        <color rgba="0.95 0.80 0.20 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1100" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.220"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_5_1" type="revolute">
+    <parent link="leg_5_seg_0"/>
+    <child link="leg_5_seg_1"/>
+    <origin xyz="0 0 -0.2000" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0000" upper="1.2566" effort="35.0" velocity="10.0"/>
+    <dynamics damping="0.05" friction="0.1"/>
+  </joint>
+</robot>
